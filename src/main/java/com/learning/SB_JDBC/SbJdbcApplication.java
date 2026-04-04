@@ -14,11 +14,12 @@ public class SbJdbcApplication {
 
 		ApplicationContext context = SpringApplication.run(SbJdbcApplication.class, args);
 		Student s = context.getBean(Student.class);
-		s.setId(1);
+		s.setId(104);
 		s.setName("Priyanshu");
 		s.setMarks(25);
 		StudentService sservice = context.getBean(StudentService.class);
 		sservice.addStudent(s);
 		List<Student> studentList = sservice.getStudents();
+		System.out.println(studentList);
 	}
 }
